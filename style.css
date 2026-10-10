@@ -1,0 +1,165 @@
+:root {
+  --bg: #f4f6fb;
+  --card: #ffffff;
+  --texto: #2d3142;
+  --suave: #6b7280;
+  --primaria: #6c63ff;
+  --primaria-escura: #554de0;
+  --borda: #e3e6ef;
+  --destaque: #fff3b0;
+  --feito: #c9ccd6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2rem 1rem 3rem;
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+/* Cartão central */
+body > * {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, var(--primaria), #ff6584);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--borda);
+}
+
+.texto {
+  background: var(--card);
+  padding: 0.9rem 1.1rem;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+  border-left: 4px solid var(--primaria);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(40, 40, 80, 0.06);
+}
+
+/* Botões e campos */
+button,
+input[type="text"] {
+  font: inherit;
+  padding: 0.65rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--borda);
+}
+
+button {
+  background: var(--primaria);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background: var(--primaria-escura);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+input[type="text"] {
+  background: var(--card);
+  color: var(--texto);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: var(--primaria);
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+}
+
+#botao {
+  margin-right: 0.5rem;
+}
+
+#nome {
+  width: min(100%, 280px);
+  margin-top: 0.5rem;
+}
+
+/* Lista */
+#lista {
+  list-style: none;
+  padding: 0;
+  margin: 1rem auto;
+}
+
+#lista li {
+  background: var(--card);
+  padding: 0.7rem 1rem;
+  margin: 0.45rem 0;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(40, 40, 80, 0.05);
+  transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+  user-select: none;
+}
+
+#lista li:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(40, 40, 80, 0.1);
+}
+
+/* Classes usadas pelo JavaScript */
+.destaque {
+  background: var(--destaque) !important;
+  font-weight: 700;
+  border-color: #f0d94a !important;
+}
+
+.feito {
+  text-decoration: line-through;
+  color: var(--feito) !important;
+  background: #f0f1f5 !important;
+}
+
+/* Formulário */
+form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.2rem;
+}
+
+form input[type="text"] {
+  flex: 1;
+  min-width: 180px;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  form button {
+    width: 100%;
+  }
+}
